@@ -164,7 +164,8 @@ const VideoPlayer = (props: Props) => {
   let shouldPlayAtEndOfSeek = false
   let controlsTimer: NodeJS.Timeout | null = null
 
-  const { isConnected } = NetInfo()
+  //const { isConnected } = NetInfo()
+  const { isConnected } = true
   const [playbackState, setPlaybackState] = useState<PlaybackStates>(PlaybackStates.Loading)
   const [lastPlaybackStateUpdate, setLastPlaybackStateUpdate] = useState<number>(Date.now())
   const [seekState, setSeekState] = useState<SeekStates>(SeekStates.NotSeeking)
