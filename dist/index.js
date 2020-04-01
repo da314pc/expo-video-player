@@ -81,7 +81,8 @@ const VideoPlayer = (props) => {
     let hideAnimation = null;
     let shouldPlayAtEndOfSeek = false;
     let controlsTimer = null;
-    const { isConnected } = NetInfo();
+    //const { isConnected } = NetInfo();
+    const isConnected = true
     const [playbackState, setPlaybackState] = useState(PlaybackStates.Loading);
     const [lastPlaybackStateUpdate, setLastPlaybackStateUpdate] = useState(Date.now());
     const [seekState, setSeekState] = useState(SeekStates.NotSeeking);
