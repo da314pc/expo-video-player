@@ -1,4 +1,5 @@
 import { AVPlaybackStatus, VideoProps } from 'expo-av/build/Video'
+
 import {
   Animated,
   Dimensions,
@@ -13,7 +14,7 @@ import {
   TouchableWithoutFeedback,
   View,
   ViewProps,
-  ViewStyle,
+  ViewStyle, NetInfo
 } from 'react-native'
 import { Audio, Video } from 'expo-av'
 import { Color } from 'csstype'
@@ -25,7 +26,7 @@ import {
   ReplayIcon,
   Spinner,
 } from './assets/icons'
-import { useNetInfo } from '@react-native-community/netinfo'
+
 import { withDefaultProps } from 'with-default-props'
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import React, { ReactNode, useEffect, useState } from 'react'
@@ -163,7 +164,7 @@ const VideoPlayer = (props: Props) => {
   let shouldPlayAtEndOfSeek = false
   let controlsTimer: NodeJS.Timeout | null = null
 
-  const { isConnected } = useNetInfo()
+  const { isConnected } = NetInfo()
   const [playbackState, setPlaybackState] = useState<PlaybackStates>(PlaybackStates.Loading)
   const [lastPlaybackStateUpdate, setLastPlaybackStateUpdate] = useState<number>(Date.now())
   const [seekState, setSeekState] = useState<SeekStates>(SeekStates.NotSeeking)
