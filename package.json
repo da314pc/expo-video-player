@@ -55,8 +55,8 @@
     "jest": "24.9.0",
     "jest-expo": "^38.0.0",
     "prettier": "^2.0.2",
-    "react": "16.13.1",
-    "react-dom": "16.11.0",
+    "react": "*",
+    "react-dom": "^16.9.0"
     "react-native": "^0.62.0",
     "react-test-renderer": "^16.9.0",
     "ts-jest": "^25.2.1",
